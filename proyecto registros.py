@@ -26,25 +26,32 @@ else:
 
 if(encendido):
     registro = open('registro1.csv', 'w')
+    registro.write(f"Temperatura"+";")
+    registro.write(f"RH"+";")
+    registro.write(f"Ppm"+";")
+    registro.write(f"Luxometro"+"\n")
 
     while(encendido):
         with open('registro1.csv', 'a') as registro:
-            for i in range(1):
-                temperatura = random.uniform(21, 24)
-                RH = random.uniform(60, 90)
-                Ppm = random.uniform(600, 1600)
-                Luz = random.uniform(0, 150)
+            '''temperatura = Pin(numero del pin)
+            RH = input(numero del pin)
+            Ppm = input(numero del pin)
+            Luz = input(numero del pin)'''
 
-                registro.write(f"{temperatura:.2f}"+"\t")
-                registro.write(f"{RH:.2f}"+"\t")
-                registro.write(f"{Ppm:.2f}"+"\t")
-                registro.write(f"{Luz:.2f}"+"\n")
+            temperatura = random.uniform(21, 24)
+            RH = random.uniform(60, 90)
+            Ppm = random.uniform(600, 1600)
+            Luz = random.uniform(0, 150)
 
-                print(f"hola")
+            registro.write(f"{temperatura:.2f}"+";")
+            registro.write(f"{RH:.2f}"+";")
+            registro.write(f"{Ppm:.2f}"+";")
+            registro.write(f"{Luz:.2f}"+"\n")
 
-                time.sleep(2)
+            print(f"hola")
+
+            time.sleep(2)
         registro.close() 
-
 
 
 
