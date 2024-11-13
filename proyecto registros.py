@@ -48,7 +48,7 @@ if(encendido):
             registro.write(f"{Ppm:.2f}"+";")
             registro.write(f"{Luz:.2f}"+"\n")
 
-            print(f"hola")
+            print(f"escritura confirmada")
 
             time.sleep(2)
         registro.close() 
